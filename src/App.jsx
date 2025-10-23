@@ -1,4 +1,10 @@
+import { Route, Routes } from "react-router-dom";
 import NavBar from "./components/navbar/Navbar";
+import Home from "./pages/Home/Home";
+import Tarefas from "./pages/Tarefas/Tarefas";
+import Login from "./pages/Login/Login";
+import Cadastro from "./pages/Cadastro/Cadastro";
+
 
 export default function App() {
     return (
@@ -6,8 +12,18 @@ export default function App() {
             <header>
                 <NavBar />
             </header>
-            <main></main>
-            <footer></footer>
+            <main>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/tarefas" element={<Tarefas />} />
+
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/cadastro" element={<Cadastro />} />
+                </Routes>
+            </main>
+            <footer>
+
+            </footer>
         </>
     );
 }
